@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="content">
                                         @if ($notification->type == 'App\Notifications\SiteOffline')
-                                        <p>Your site is offline</p>
+                                        <p>Your {{$notification->data['server']}} server is offline</p>
                                         @endif
                                         <span class="date">{{$notification->created_at->diffForHumans()}}</span>
                                     </div>

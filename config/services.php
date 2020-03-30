@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'nexmo' => [
+      'sms_from' => '+233 54 554 0237'
+    ]
+
 ];

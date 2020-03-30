@@ -5,7 +5,9 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\NexmoMessage;
 use Illuminate\Notifications\Notification;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class SiteOffline extends Notification
 {
@@ -31,7 +33,14 @@ class SiteOffline extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail','database'];
+        return ['mail', 'database', 'nexmo'];
+    }
+
+
+    public function toNexmo($notifiable)
+    {
+        return (new NexmoMessage())
+            ->content('Whoops! Your server is offline');
     }
 
     /**
@@ -63,4 +72,6 @@ class SiteOffline extends Notification
             'status' => $this->status
         ];
     }
+
+ 
 }
