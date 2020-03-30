@@ -1,8 +1,6 @@
 @extends('layouts.mainlayout')
 
-<head>
-    <link rel="stylesheet" <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>>
-</head>
+
 @section('content')
 <?php
 function GetServerStatus($site, $port)

@@ -33,9 +33,16 @@
     <link rel="stylesheet" href="{{ asset('css/theme.css') }}" media="all">
 
     {{-- Main Front --}}
-    <link  href="{{ asset('fonts/static/Comfortaa-Light.ttf') }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans,san+s-serif" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@200&display=swap" rel="stylesheet">
+
+    {{-- <link href="{{ asset('fonts/static/Comfortaa-Light.ttf') }}">
     <link rel="stylesheet" href="{{ asset('fonts/static/Comfortaa-Bold.ttf') }}">
-    <link rel="stylesheet" href="{{ asset('fonts/static/Comfortaa-Regular.ttf') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/static/Comfortaa-Regular.ttf') }}"> --}}
 
     <!-- Bootstrap CSS -->
 

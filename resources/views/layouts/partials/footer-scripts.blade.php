@@ -18,4 +18,6 @@
 <script src="{{ asset('vendor/select2/select2.min.js') }}"></script>
 
 <!-- Main JS-->
-<script src="{{ asset('js/main.js') }}>" </script>
+<script src="{{ asset('js/main.js') }}"> </script> 
+
+<script src="/resources/js/app.js"> </script>

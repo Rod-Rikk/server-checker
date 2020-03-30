@@ -23,4 +23,8 @@ Route::get('/', function () {
 //     return view('servers.index');
 // });
 Route::get('home','PingController@serverStatus');
-Route::resource('/servers', 'ServerController');
+Route::resource('/servers', 'ServerController')->middleware(['auth']);
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
