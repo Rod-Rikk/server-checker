@@ -16,12 +16,11 @@ class SiteOffline extends Notification
      *
      * @return void
      */
-    public function __construct($server,$status)
+    public function __construct($server, $status)
     {
         //
         $this->server = $server;
         $this->status = $status;
-
     }
 
     /**
@@ -32,7 +31,7 @@ class SiteOffline extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -43,12 +42,11 @@ class SiteOffline extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->markdown('mails.site-offline',[
+        return (new MailMessage)->markdown('mails.site-offline', [
             'server' => $this->server,
             'status' => $this->status
-            
+
         ]);
-                   
     }
 
     /**
@@ -61,6 +59,8 @@ class SiteOffline extends Notification
     {
         return [
             //
+            'server' => $this->server,
+            'status' => $this->status
         ];
     }
 }
