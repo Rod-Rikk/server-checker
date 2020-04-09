@@ -49,12 +49,12 @@ class SendUserSiteOffline extends Command
         foreach ($servers as $server) {
             $status = self::GetServerStatus($server->ip_address, 80);
             if ($status == 'offline') {
-                Notification::send($users,new SiteOffline($server->name,$status));
+                Notification::send($users, new SiteOffline($server->name, $status));
             }
         }
     }
 
-  public function GetServerStatus($site, $port)
+    public function GetServerStatus($site, $port)
     {
         $status = array("offline", "online");
         $fp = @fsockopen($site, $port, $errno, $errstr, 2);

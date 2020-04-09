@@ -72,6 +72,4 @@ class SiteOffline extends Notification
             'status' => $this->status
         ];
     }
-
- 
 }

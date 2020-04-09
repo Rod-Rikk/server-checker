@@ -45,7 +45,7 @@
                                             <td> <a href="/servers/{{$server->id}}/edit" <i
                                                     class="fas fa-edit text-warning"> </i></a> </td>
                                             <td> <a href="/servers/{{ $server->id }}" data-toggle="modal"
-                                                    data-target="#deleteModal" <i class="fas fa-trash-alt text-danger">
+                                            data-target="#deleteModal-{{$server->id}}" <i class="fas fa-trash-alt text-danger">
                                                     </i></a> </td>
 
                                         </tr>
@@ -134,7 +134,7 @@
             {{ csrf_field() }}
             <!-- Modal to confirm deletion-->
             <div class="container-fluid">
-                <div class="modal fade" id="deleteModal" tabindex="-1" z-index="-1" role="dialog"
+            <div class="modal fade" id="deleteModal-{{$server->id}}" tabindex="-1" z-index="-1" role="dialog"
                     aria-labelledby="deleteModalTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

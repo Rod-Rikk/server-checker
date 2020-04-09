@@ -30,7 +30,7 @@ function GetServerStatus($site, $port)
                             <br>
                             <div class="card-body">
 
-
+                                @if ($servers->count() > 0)
                                 @foreach ($servers as $site)
                                 <?php $status = GetServerStatus($site->ip_address, 80); ?>
 
@@ -51,21 +51,31 @@ function GetServerStatus($site, $port)
 
                                     @if ($status == "offline")
                                     <div class="progress mb-6">
-                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated"
-                                            role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     @else
                                     <div class="progress mb-6">
-                                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                            role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                                            aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     @endif
 
                                 </div>
                                 <?php  ?>
                                 @endforeach
+
+                                @else
+                                <div class="col-md-8" style="font-family: 'Inconsolata', monospace;">
+
+                                    <a href="/servers">
+                                        <h4 class="text-warning">Oops...you do not have any servers registered. Create one?</h4>
+                                    </a>
+
+                                </div>
+
+                                @endif
+
+
+
                             </div>
                         </div>
                     </div>
